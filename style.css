@@ -87,6 +87,42 @@ button:hover {
   }
 }
 
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+  .container {
+    padding: 5px;
+  }
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .logo {
+    width: 100px;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .filters label,
+  .filters input,
+  .filters button {
+    display: block;
+    width: 100%;
+    margin: 0 0 8px 0;
+  }
+  .gallery {
+    grid-template-columns: 1fr !important;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 /* Gallery flex container */
 .gallery {
   display: flex;
