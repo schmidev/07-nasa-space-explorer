@@ -65,27 +65,31 @@ button.addEventListener('click', () => {
         gallery.appendChild(div);
       });
 
-      // Add click event listeners to images for modal
+      // Add click event listeners to images for modal only (remove zoom effect JS)
       const galleryImages = document.querySelectorAll('.gallery-img');
       galleryImages.forEach(img => {
         img.addEventListener('click', (e) => {
-          // Get modal elements
+          // Modal code only
           const modal = new bootstrap.Modal(document.getElementById('imageModal'));
           const modalImg = document.getElementById('modalImage');
           const modalTitle = document.getElementById('imageModalLabel');
           const modalDate = document.getElementById('modalDate');
           const modalExplanation = document.getElementById('modalExplanation');
 
-          // Set modal content from data attributes
           modalImg.src = img.getAttribute('data-url');
           modalImg.alt = decodeURIComponent(img.getAttribute('data-title'));
           modalTitle.textContent = decodeURIComponent(img.getAttribute('data-title'));
           modalDate.textContent = img.getAttribute('data-date');
           modalExplanation.textContent = decodeURIComponent(img.getAttribute('data-explanation'));
 
-          // Show the modal
           modal.show();
         });
+      });
+      // Remove zoom when clicking outside any image
+      document.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('gallery-img')) {
+          document.querySelectorAll('.gallery-img.zoomed').forEach(z => z.classList.remove('zoomed'));
+        }
       });
     })
     .catch(error => {

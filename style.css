@@ -220,3 +220,15 @@ footer {
   padding: 12px 0;
   border-top: 4px solid var(--nasa-blue);
 }
+
+.gallery-img {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+.gallery-img:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 8px 32px rgba(11,61,145,0.18), 0 1.5px 8px rgba(0,0,0,0.10);
+  z-index: 10;
+  position: relative;
+}
