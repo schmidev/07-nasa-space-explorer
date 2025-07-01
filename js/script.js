@@ -8,9 +8,6 @@ const endInput = document.getElementById('endDate');
 // - Restrict dates to NASA's image archive (starting from 1995)
 setupDateInputs(startInput, endInput);
 
-// Set the placeholder for the start date input to the earliest date allowed
-const earliestDate = startInput.min;
-
 // Find the button and gallery elements
 const button = document.querySelector('.filters button');
 const gallery = document.getElementById('gallery');
