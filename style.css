@@ -5,10 +5,19 @@
   padding: 0;
 }
 
+/* NASA Brand Colors */
+:root {
+  --nasa-red: #fc3d21;
+  --nasa-blue: #0b3d91;
+  --nasa-white: #ffffff;
+  --nasa-black: #212121;
+}
+
 /* Base page styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f4f4f4; /* Light background for contrast */
+  color: var(--nasa-black);
   padding: 20px;
 }
 
@@ -22,22 +31,37 @@ body {
 .site-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  background: #f4f4f446; /* Light background for contrast */
+  border-bottom: 4px solid var(--nasa-blue);
+  gap: 16px;
 }
 
 h1 {
-  font-family: Verdana, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
-  color: #212121;
+  color: var(--nasa-blue);
+  letter-spacing: 1px;
+  font-size: 2.2rem;
 }
 
 /* Logo */
 .logo {
   width: 140px;
-  margin-right: 15px;
+  margin-right: 24px;
+  margin-left: 8px;
+  background: var(--nasa-white);
+  padding: 4px 0;
+}
+
+.logo-insignia {
+  height: 60px;
+  width: auto;
+  margin-left: 12px;
+  vertical-align: middle;
 }
 
 /* Date‐picker & button row */
@@ -64,14 +88,23 @@ button {
   width: 100%;
 }
 
-/* Button specific */
-button {
-  background-color: #d3d3d3;
-  color: black;
-  cursor: pointer;
+input[type="date"] {
+  border: 1.5px solid var(--nasa-blue);
+  color: var(--nasa-black);
+  background: var(--nasa-white);
 }
-button:hover {
-  background-color: #bfbfbf;
+
+/* Button specific */
+button, .btn-primary {
+  background-color: var(--nasa-red) !important;
+  color: var(--nasa-white) !important;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+button:hover, .btn-primary:hover {
+  background-color: #b92d1f !important;
 }
 
 /* Stack horizontally on wider screens */
@@ -137,7 +170,8 @@ button:hover {
   flex: 1 1 100%;  /* full width by default */
   min-width: 280px;
   max-width: 500px;
-  background: white;
+  background: var(--nasa-white);
+  border: 1.5px solid var(--nasa-blue);
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -171,10 +205,18 @@ button:hover {
   flex: 1 1 100%;
   text-align: center;
   padding: 40px;
-  color: #666;
+  background-color: #0b3d91;
+  color: #fff;
 }
 
 .placeholder-icon {
   font-size: 48px;
   margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  background: var(--nasa-red);
+  padding: 12px 0;
+  border-top: 4px solid var(--nasa-blue);
 }
